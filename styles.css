@@ -1,4 +1,5 @@
 /* === VARIABLES Y RESETEO === */
+/* # es para ID y . para class, * es selector universal, :root es para todo el doct*/
 :root {
   --accent: #182dc9;  /* Color de acento para botones */
   --muted: #5b5151;      /* Color gris usado en textos secundarios */
@@ -154,6 +155,7 @@ body {
 
 /* === HERO === */
 .hero {
+  background-image: url('imagenes/freno.jpg');
   background-size: cover; /* La imagen cubre toda la sección */
   background-position: center;
   text-align: center;
@@ -389,7 +391,7 @@ body {
 
 /* === FOOTER === */
 #footer {
-  background: url('/imagenes/bmw.png');
+  background: url('imagenes/bmw.png');
   background-size: cover;
   background-position: center 50%;
   background-repeat: no-repeat;
@@ -438,7 +440,7 @@ body {
   box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }
 
-/* === ICONOS SOCIALES === */
+/* === redes sociales === */
 .social-icons {
   display: flex;
   justify-content: center;

@@ -156,6 +156,7 @@ body {
 
 /* === HERO === */
 .hero {
+  background-image: url('../../imagenes/freno.jpg');
   background-size: cover;    /* La imagen cubre toda la sección */
   background-position: center;
   text-align: center;
@@ -419,7 +420,7 @@ body {
 /* === FOOTER === */
 /* con imagen detras:*/
 #footer {
-  background: url('/imagenes/bmw.png');
+  background: url('../../imagenes/bmw.png');
   background-size: cover;
   background-position: center 50%;
   background-repeat: no-repeat;

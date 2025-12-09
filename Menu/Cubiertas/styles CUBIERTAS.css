@@ -29,7 +29,6 @@ body {
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 20px;
-
     display: flex;
     align-items: center;
     justify-content: space-between; /* Logo a la izquierda, carrito a la derecha */
@@ -42,7 +41,7 @@ body {
     gap: 20px; /* Espacio entre logo y botones */
 }
 
-/* ⭐ CAMBIO — Hacer que los botones del menú queden en fila */
+/*CAMBIO — Hacer que los botones del menú queden en fila */
 .header-content .dropdown {
     display: inline-block;
 }
@@ -98,7 +97,7 @@ body {
 
     display: none;
 
-    /* ⭐ CAMBIO — Para que no quede escondido detrás de otros elementos */
+    /*CAMBIO — Para que no quede escondido detrás de otros elementos */
     z-index: 9999;
 }
 
@@ -154,6 +153,7 @@ body {
 
 /* === HERO === */
 .hero {
+  background-image: url('../../imagenes/freno.jpg');
   background-size: cover;
   background-position: center;
   text-align: center;
@@ -389,7 +389,7 @@ body {
 
 /* === FOOTER === */
 #footer {
-  background: url('/imagenes/bmw.png');
+  background: url('../../imagenes/bmw.png');
   background-size: cover;
   background-position: center 50%;
   background-repeat: no-repeat;
