@@ -34,7 +34,7 @@ function renderCartCount() {
 // Cargar productos desde db.json
 async function loadProducts() {
   try {
-    const res = await fetch("/db.json"); 
+    const res = await fetch("db.json"); 
     // la barra da ubicacion absoluta
     if (!res.ok) throw new Error("Error al cargar productos");
     products = await res.json();
