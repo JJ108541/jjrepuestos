@@ -4,69 +4,69 @@
     "name": "Pastillas de freno delanteras",
     "description": "Juego de pastillas para modelos comunes. Calidad OEM.",
     "price": 4500.00,
-    "image": "/imagenes/productos/freno.jpg"
+    "image": "imagenes/productos/freno.jpg"
   },
   {
     "id": "p2",
     "name": "Filtro de aire",
     "description": "Filtro de aire para motor estándar, mejora el rendimiento y duración.",
     "price": 2800.00,
-    "image": "/imagenes/productos/filtro.jpg"
+    "image": "imagenes/productos/filtro.jpg"
   },
   {
     "id": "p3",
     "name": "Aceite sintético 5W-30",
     "description": "Aceite sintético premium para motores modernos. Envase de 4L.",
     "price": 9500.00,
-    "image": "/imagenes/productos/aceite.png"
+    "image": "imagenes/productos/aceite.png"
   },
   {
     "id": "p4",
     "name": "Batería 12V 60Ah",
     "description": "Batería libre de mantenimiento con alta durabilidad y potencia de arranque.",
     "price": 32000.00,
-    "image": "/imagenes/productos/bateria.jpg"
+    "image": "imagenes/productos/bateria.jpg"
   },
   {
     "id": "p5",
     "name": "Lámparas H7 LED",
     "description": "Kit de lámparas LED para faros delanteros, luz blanca intensa.",
     "price": 7200.00,
-    "image": "/imagenes/productos/lampara.jpg"
+    "image": "imagenes/productos/lampara.jpg"
   },
   {
     "id": "p6",
     "name": "Pastillas de freno traseras",
     "description": "Juego de pastillas para modelos comunes. Calidad OEM.",
     "price": 4500.00,
-    "image": "/imagenes/productos/freno.jpg"
+    "image": "imagenes/productos/freno.jpg"
   },
   {
     "id": "p7",
     "name": "Filtro de aire acondicionado",
     "description": "Filtro de aire para acondicionado estándar, mejora el rendimiento y duración.",
     "price": 2800.00,
-    "image": "/imagenes/productos/filtro.jpg"
+    "image": "imagenes/productos/filtro.jpg"
   },
   {
     "id": "p8",
     "name": "Aceite sintético 40W-30",
     "description": "Aceite sintético premium para motores modernos. Envase de 5L.",
     "price": 9500.00,
-    "image": "/imagenes/productos/aceite.png"
+    "image": "imagenes/productos/aceite.png"
   },
   {
     "id": "p9",
     "name": "Batería 12V 120Ah",
     "description": "Batería libre de mantenimiento con alta durabilidad y potencia de arranque.",
     "price": 32000.00,
-    "image": "/imagenes/productos/bateria.jpg"
+    "image": "imagenes/productos/bateria.jpg"
   },
   {
     "id": "p10",
     "name": "Lámparas H7 CRI-LED",
     "description": "Kit de lámparas LED para faros delanteros, luz blanca intensa.",
     "price": 7200.00,
-    "image": "/imagenes/productos/lampara.jpg"
+    "image": "imagenes/productos/lampara.jpg"
   }
 ]
