@@ -29,6 +29,7 @@
 
                 <!-- Menus desplegables dropdown -->
 
+            <nav class="nav-menu" id="nav-menu">
                 <div class="dropdown" data-close="true">
                     <button class="dropdown-btn">Marcas</button>
                     <ul class="dropdown-menu">
@@ -64,6 +65,7 @@
                         <li><a href="../Repuestos/camiones.html">Camiones</a></li>
                     </ul>
                 </div>
+            </nav>
 
                 <!-- 
                     data-close="true"    → cerrar al hacer clic fuera
@@ -120,9 +122,9 @@
             <input type="text" id="vehiculo" name="vehiculo" required>
 
             <label for="consulta">Consulta:</label>
-            <textarea id="consulta" name="consulta" rows="4" required></textarea>
+            <textarea id="consulta" name="consulta" rows="2" required></textarea>
 
-            <button type="submit" class="btn">Enviar Consulta</button>
+            <button type="submit" class="btn" id="enviar_consulta">Enviar Consulta</button>
         </form>
         <div id="consulta-message" role="status" aria-live="polite"></div>
     <!-- CONTENIDO PRINCIPAL -->

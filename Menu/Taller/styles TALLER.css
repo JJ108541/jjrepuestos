@@ -1,4 +1,5 @@
 /* === VARIABLES Y RESETEO === */
+/* # es para ID y . para class, * es selector universal, :root es para todo el doct*/
 :root {
   --accent: #182dc9;  /* Color de acento para botones */
   --muted: #5b5151;      /* Color gris usado en textos secundarios */
@@ -18,7 +19,7 @@ body {
   overflow-x: hidden;
 }
 
-/* === ENCABEZADO === */
+/* HEADER */
 .site-header {
   width: 100%;
   background-color: #1404f7;  /* Fondo azul del header */
@@ -35,14 +36,14 @@ body {
     justify-content: space-between; /* Logo a la izquierda, carrito a la derecha */
 }
 
-/* ====== LOGO + MENÚ ====== */
+/* LOGO Y MENU*/
 .header-content {
     display: flex;
     align-items: center;
     gap: 20px; /* Espacio entre logo y botones */
 }
 
-/* CAMBIO — Hacer que los botones del menú queden en fila */
+/* Hacer que los botones del menú queden en fila */
 .header-content .dropdown {
     display: inline-block;
 }
@@ -64,17 +65,18 @@ body {
     cursor: pointer;
     font-weight: bold;
     border-radius: 5px;
-
+    color: #f9f8f8;
     display: flex;
     align-items: center;
     white-space: nowrap; /* evita que el texto baje de línea */
 }
+
 .dropdown-btn:active {
     transform: translateY(0);        /* vuelve a su lugar */
     box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
 .dropdown-btn:hover {
-    background-color: #0e058f;
+    background-color: #1404f7;
     transform: translateY(-2px);     /* leve levantamiento */
     box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }
@@ -85,8 +87,8 @@ body {
     top: 100%;
     left: 0;
 
-    background: white;
-    color: black;
+    background: rgb(30, 149, 233);
+    color: rgb(243, 243, 243);
     list-style: none;
 
     min-width: 180px;
@@ -117,15 +119,14 @@ body {
     display: block;
     padding: 10px 15px;
     text-decoration: none;
-    color: black;
+    color: rgb(0, 0, 0);
 }
 
 .dropdown-menu li a:hover {
     background: #f2f2f2;
 }
 
-
-/* === BOTÓN HAMBURGUESA (Móvil) === */
+/*BOTON HAMBURGUESA */
 .hamburguer {
   display: none;              /* Se muestra solo en móvil */
   flex-direction: column;
@@ -138,12 +139,11 @@ body {
 .hamburguer .bar {
   height: 3px;
   width: 100%;
-  background-color: #00ff4c;   /* Color de las 3 barras del menú móvil */
+  background-color: #0008ff;   /* Color de las 3 barras del menú móvil */
   border-radius: 3px;
   transition: all 0.3s ease;
 }
 
-/* Animación cuando se abre */
 .hamburguer.open .bar:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -154,10 +154,10 @@ body {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* === HERO === */
+/*HERO*/
 .hero {
   background-image: url('../../imagenes/freno.jpg');
-  background-size: cover;    /* La imagen cubre toda la sección */
+  background-size: cover; /* La imagen cubre toda la sección */
   background-position: center;
   text-align: center;
   color: rgb(14, 6, 6);
@@ -169,7 +169,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4); /* Oscurece la imagen de fondo */
+  background: rgba(0, 0, 0, 0.4);
   z-index: 0;
 }
 
@@ -192,8 +192,8 @@ body {
 
 .hero .btn {
   display: inline-block;
-  background-color: #00ff7f;  /* Color del botón sobre la imagen */
-  color: #070707;
+  background-color: #1404f7;
+  color: #f9f8f8;
   padding: 10px 25px;
   border-radius: 6px;
   font-weight: 700;
@@ -202,38 +202,62 @@ body {
 }
 
 .hero .btn:hover {
-  background-color: #05ad05;
+  background-color: #0502a7;
   transform: translateY(-2px);
   box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }
 /*formulario de consulta*/
 #consulta-form {
-  display: block;
+  display: grid;
+  grid-template-columns: 200px 1fr; /* label | input */
+  gap: 12px 15px;
   width: 70%;
-  margin-bottom: 5px;
-  padding: 5px 4px;
-  color:#070707;
-  border: 1px solid #090909;
-  border-radius: 8px;
-  background-color: rgba(115, 111, 111, 0.08);
-}
-#consulta-form input{
-  width: 10%;
-  margin-bottom: 5px;
-  padding: 5px 4px;
-  text-align: center;
-  border: 1px solid #090909;
-  border-radius: 6px;
-  background-color: rgba(115, 111, 111, 0.08);
-}
-#consulta-form label{
-  color:#070707;
-  font-weight: 700;
+  max-width: 700px;
   
 }
+.consultas h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #070707;
+}
 
-/* === PRODUCTOS === */
-/* Contenedor donde se cargan productos desde db.json */
+/* Labels */
+#consulta-form label {
+  font-weight: 700;
+  color: #070707;
+  align-self: center;
+}
+
+/* Inputs y textarea */
+#consulta-form input,
+#consulta-form textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #1404f7;
+  border-radius: 8px;
+  background-color: rgba(248, 242, 242, 0.96);
+}
+
+#consulta-form textarea {
+  resize: vertical;
+}
+
+/* Botón ocupa toda la fila */
+#consulta-form button {
+  grid-column: 1 / -1;
+  justify-self: start;
+}
+
+#enviar_consulta{
+  display: inline-block;
+  background-color: #1404f7;
+  color: #fefefe;
+  padding: 3px 6px;
+  border-radius: 6px;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+/*PRODUCTOS*/
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -241,9 +265,8 @@ body {
   margin-top: 2rem;
 }
 
-/* Tarjeta por producto (imagen incluida) */
 .card {
-  background: #1404f7;          /* Fondo de cada tarjeta */
+  background: #1404f7;
   padding: 1rem;
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(18, 18, 19, 0.06);
@@ -255,11 +278,11 @@ body {
 .card img {
   width: 100%;
   height: 150px;
-  object-fit: cover;            /* Recorta la imagen sin deformarla */
+  object-fit: cover;
   border-radius: 6px;
 }
 
-/* === MODALES (Carrito, Pago) === */
+/*MODAL */
 .modal {
   position: fixed;
   inset: 0;
@@ -271,13 +294,14 @@ body {
 
 .modal[aria-hidden="false"] {
   display: flex;
-  background: rgba(0, 0, 0, .35); /* Fondo oscuro detrás del modal */
+  background: rgba(0, 0, 0, .35);
 }
 
 .modal *{
   margin-top: 1rem;
   color: #080808;
 }
+
 .modal-content {
   background: #fff;
   padding: 1rem 1.25rem;
@@ -286,22 +310,24 @@ body {
   width: 100%;
   position: relative;
 }
-/* Boton cerrar del carrito */
+
 .modal .close{
   display: inline-block;
-  background-color: #00ff7f;  /* Color del botón sobre la imagen */
+  background-color: #00ff7f;
   color: #070707;
   padding: 3px 6px;
   border-radius: 6px;
   font-weight: 700;
   transition: all 0.3s;
 }
+
 .modal .close:hover {
   background-color: #05ad05;
   transform: translateY(-2px);
   box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }
-/* === CARRITO === */
+
+/*CARRITO*/
 .cart-item {
   display: flex;
   align-items: center;
@@ -313,16 +339,14 @@ body {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* Imagen del producto */
 .cart-item img {
   width: 64px;
   height: 48px;
-  object-fit: cover;  /* Ajusta miniaturas del carrito */
+  object-fit: cover;
   border-radius: 6px;
   margin-right: 10px;
 }
 
-/* Nombre + precio */
 .cart-item .meta {
   flex-grow: 1;
   margin-left: 10px;
@@ -340,14 +364,12 @@ body {
   color: #555;
 }
 
-/* Controles de cantidad */
 .cart-item .qty {
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-/* Botones de + / - / eliminar */
 .cart-item .qty button {
   background: #00ff7f;
   border: none;
@@ -363,7 +385,6 @@ body {
   background: #00ff7f;
 }
 
-/* Botón Eliminar */
 .cart-item .qty .rm {
   background: #ff3b3b;
   color: white;
@@ -373,7 +394,6 @@ body {
   background: #d93030;
 }
 
-/* Cantidad */
 .cart-item .qty span {
   min-width: 24px;
   text-align: center;
@@ -381,23 +401,38 @@ body {
   font-weight: 600;
 }
 
-/* Boton proceder al pago */
 .modal .btn-primary{
   display: inline-block;
-  background-color: #00ff7f;  /* Color del botón sobre la imagen */
+  background-color: #00ff7f;
   color: #070707;
   padding: 3px 6px;
   border-radius: 6px;
   font-weight: 700;
   transition: all 0.3s;
 }
-.modal .btn-primary:hover {
-  background-color: #05ad05;
+.agregar-carrito {
+  display: inline-block;
+  background-color: #1404f7;
+  color: #fbfbfb;
+  padding: 10px 25px;
+  border-radius: 6px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.agregar-carrito:hover {
+  background-color: #080270;
   transform: translateY(-2px);
   box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }
-/*Medio de Pago*/
-/*nombre y correo*/
+.modal .btn-primary:hover {
+  background-color: #0502a7;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+
+/* Medio de Pago */
+/* nombre y correo */
 .modal form input[id="customer-name"],
 .modal form input[id="customer-email"]{
   display: block;
@@ -408,6 +443,7 @@ body {
   border-radius: 8px;
   background-color: rgba(115, 111, 111, 0.08);
 }
+
 #card-number input{
   width: 10%;
   margin-bottom: 5px;
@@ -417,22 +453,24 @@ body {
   border-radius: 6px;
   background-color: rgba(115, 111, 111, 0.08);
 }
-/* === FOOTER === */
-/* con imagen detras:*/
+
+/*FOOTER*/
 #footer {
   background: url('../../imagenes/bmw.png');
   background-size: cover;
   background-position: center 50%;
   background-repeat: no-repeat;
-  padding: 10px 0px; /*reduce el espacio a una altura menor*/
+  padding: 10px 0px;
   color: #0c0c0c;
 }
+
 #footer form label {
   display: block;
   margin-bottom: 10px;
   font-weight: 600;
   color: #fff;
 }
+
 #footer input,
 #footer textarea {
   width: 60%;
@@ -441,9 +479,8 @@ body {
   border: 1px solid #333;
   border-radius: 8px;
   background-color: rgba(255,255,255,0.08);
-
 }
-/* Campos del formulario de correo */
+
 #footer .form-control {
   background-color: rgba(255,255,255,0.08);
   border: 1px solid #333;
@@ -451,23 +488,24 @@ body {
   border-radius: 8px;
   padding: 10px;
 }
-/* Boton cerrar del formulario */
+
 #footer button[type="submit"]{
   display: inline-block;
-  background-color: #00ff7f;  /* Color del botón sobre la imagen */
-  color: #070707;
+  background-color: #1404f7;
+  color: #fefefe;
   padding: 3px 6px;
   border-radius: 6px;
   font-weight: 700;
   transition: all 0.3s;
 }
+
 #footer button[type="submit"]:hover {
-  background-color: #05ad05;
+  background-color: #0a0463;
   transform: translateY(-2px);
   box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }
 
-/* === ICONOS SOCIALES === */
+/*redes sociales*/
 .social-icons {
   display: flex;
   justify-content: center;
@@ -475,10 +513,11 @@ body {
   list-style: none;
   padding: 20px 0;
 }
+
 .social-icons li a img {
   width: 50px;
   height: 50px;
-  border-radius: 50%;       /* Las hace redondas */
+  border-radius: 50%;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -486,45 +525,70 @@ body {
   transform: translateY(-6px);
   box-shadow: 0 0 15px rgba(255,255,255,0.4);
 }
-
-/* === RESPONSIVE REAL PARA TU MENÚ === */
+/* barra de navegacion que se debe ocultar en el responsive */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/*RESPONSIVE*/
 @media (max-width: 768px) {
+  .site-header {
+    position: relative; /* referencia para el menú */
+  }
 
-  /* 1. Contenedor principal del header */
+  .nav-menu {
+    position: absolute;
+    top: 100%;          /* aparece debajo del header */
+    left: 0;
+
+    width: 100%;
+    background-color: #1404f7;
+
+    display: none;
+    flex-direction: column;
+
+    z-index: 9999;      /* se superpone a todo */
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
   .header-content {
     display: flex;
-    justify-content: space-between; /* Logo a la izquierda + hamburguesa a la derecha */
+    justify-content: space-between;
     align-items: center;
     width: 100%;
   }
 
-  /* 2. Ocultamos los dropdowns del menú */
   .dropdown {
     display: none;
   }
 
-  /* 3. Cuando el menú está activo, los dropdowns aparecen en columna */
   .dropdown.show {
     display: block;
     width: 100%;
     text-align: center;
-    margin: .5rem 0;
+    margin-top: 8px;
   }
 
-  /* 4. Estilo del menú desplegado */
   .dropdown-menu {
-    position: static;
-    background: #001f3f;
-    border: none;
-    box-shadow: none;
-    width: 100%;
-  }
+  position: absolute;
+  top: 0;
+  left: 100%;                 /* las listas por encima a un costado */
+  
+  background: #4e9eee;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 
-  /* 5. Activar el botón hamburguesa en móvil */
+  min-width: 200px;
+  width: max-content;
+
+  display: none;
+}
   .hamburguer {
     display: flex;
     flex-direction: column;
     gap: 4px;
   }
 }
-

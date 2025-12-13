@@ -1,28 +1,14 @@
 // MENÚ HAMBURGUESA ----
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => { 
 
-    const hamburguer = document.getElementById("hamburguer");
-    const dropdowns = document.querySelectorAll(".dropdown");
-
-    //funcionalidad del boton hamburguesa
-    if (hamburguer) {
-        hamburguer.addEventListener("click", () => {
-            dropdowns.forEach(d => d.classList.toggle("show")); // mostrar / ocultar menú
-            hamburguer.classList.toggle("open");                // animación del ícono hamburguesa
-        });
-    }
-
-    // Cerrar menú cuando se hace clic en alguna opción
-    dropdowns.forEach(drop => {
-        const links = drop.querySelectorAll("a");
-        links.forEach(link => {
-            link.addEventListener("click", () => {
-                dropdowns.forEach(d => d.classList.remove("show"));
-                hamburguer.classList.remove("open");
-            });
-        });
-    });
-
+	const hamburguer = document.getElementById("hamburguer"); 
+	const navMenu = document.getElementById("nav-menu"); 
+	if (hamburguer && navMenu) { 
+		hamburguer.addEventListener("click", () => { 
+			navMenu.classList.toggle("open"); // mostrar/ocultar menú 
+			hamburguer.classList.toggle("open"); // animación del ícono 
+		});
+ 	} 
 });
 
 
@@ -48,7 +34,7 @@ function renderCartCount() {
 // Cargar productos desde db.json
 async function loadProducts() {
   try {
-    const res = await fetch("db.json"); 
+    const res = await fetch("/db.json"); 
     // la barra da ubicacion absoluta
     if (!res.ok) throw new Error("Error al cargar productos");
     products = await res.json();

@@ -1,4 +1,5 @@
 /* === VARIABLES Y RESETEO === */
+/* # es para ID y . para class, * es selector universal, :root es para todo el doct*/
 :root {
   --accent: #182dc9;  /* Color de acento para botones */
   --muted: #5b5151;      /* Color gris usado en textos secundarios */
@@ -18,7 +19,7 @@ body {
   overflow-x: hidden;
 }
 
-/* === ENCABEZADO === */
+/* HEADER*/
 .site-header {
   width: 100%;
   background-color: #1404f7;  /* Fondo azul del header */
@@ -29,19 +30,20 @@ body {
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 20px;
+
     display: flex;
     align-items: center;
     justify-content: space-between; /* Logo a la izquierda, carrito a la derecha */
 }
 
-/* ====== LOGO + MENÚ ====== */
+/* LOGO Y MENU */
 .header-content {
     display: flex;
     align-items: center;
     gap: 20px; /* Espacio entre logo y botones */
 }
 
-/*CAMBIO — Hacer que los botones del menú queden en fila */
+/*Hacer que los botones del menú queden en fila */
 .header-content .dropdown {
     display: inline-block;
 }
@@ -63,17 +65,18 @@ body {
     cursor: pointer;
     font-weight: bold;
     border-radius: 5px;
-
+    color: #f9f8f8;
     display: flex;
     align-items: center;
     white-space: nowrap; /* evita que el texto baje de línea */
 }
+
 .dropdown-btn:active {
     transform: translateY(0);        /* vuelve a su lugar */
     box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
 .dropdown-btn:hover {
-    background-color: #0e058f;
+    background-color: #1404f7;
     transform: translateY(-2px);     /* leve levantamiento */
     box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }
@@ -84,8 +87,8 @@ body {
     top: 100%;
     left: 0;
 
-    background: white;
-    color: black;
+    background: rgb(30, 149, 233);
+    color: rgb(243, 243, 243);
     list-style: none;
 
     min-width: 180px;
@@ -97,7 +100,7 @@ body {
 
     display: none;
 
-    /*CAMBIO — Para que no quede escondido detrás de otros elementos */
+    /*que no quede escondido detrás de otros elementos */
     z-index: 9999;
 }
 
@@ -116,14 +119,14 @@ body {
     display: block;
     padding: 10px 15px;
     text-decoration: none;
-    color: black;
+    color: rgb(0, 0, 0);
 }
 
 .dropdown-menu li a:hover {
     background: #f2f2f2;
 }
 
-/* === BOTÓN HAMBURGUESA (Móvil) === */
+/*BOTÓN HAMBURGUESA */
 .hamburguer {
   display: none;              /* Se muestra solo en móvil */
   flex-direction: column;
@@ -136,7 +139,7 @@ body {
 .hamburguer .bar {
   height: 3px;
   width: 100%;
-  background-color: #00ff4c;   /* Color de las 3 barras del menú móvil */
+  background-color: #0008ff;   /* Color de las 3 barras del menú móvil */
   border-radius: 3px;
   transition: all 0.3s ease;
 }
@@ -151,10 +154,10 @@ body {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* === HERO === */
+/*HERO */
 .hero {
   background-image: url('../../imagenes/freno.jpg');
-  background-size: cover;
+  background-size: cover; /* La imagen cubre toda la sección */
   background-position: center;
   text-align: center;
   color: rgb(14, 6, 6);
@@ -189,8 +192,8 @@ body {
 
 .hero .btn {
   display: inline-block;
-  background-color: #00ff7f;
-  color: #070707;
+  background-color: #1404f7;
+  color: #f9f8f8;
   padding: 10px 25px;
   border-radius: 6px;
   font-weight: 700;
@@ -199,12 +202,12 @@ body {
 }
 
 .hero .btn:hover {
-  background-color: #05ad05;
+  background-color: #0502a7;
   transform: translateY(-2px);
   box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }
 
-/* === PRODUCTOS === */
+/*PRODUCTOS*/
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -229,7 +232,7 @@ body {
   border-radius: 6px;
 }
 
-/* === MODALES === */
+/* MODAL */
 .modal {
   position: fixed;
   inset: 0;
@@ -274,7 +277,7 @@ body {
   box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }
 
-/* === CARRITO === */
+/*CARRITO*/
 .cart-item {
   display: flex;
   align-items: center;
@@ -357,9 +360,23 @@ body {
   font-weight: 700;
   transition: all 0.3s;
 }
-
+.agregar-carrito {
+  display: inline-block;
+  background-color: #1404f7;
+  color: #fbfbfb;
+  padding: 10px 25px;
+  border-radius: 6px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.agregar-carrito:hover {
+  background-color: #080270;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
 .modal .btn-primary:hover {
-  background-color: #05ad05;
+  background-color: #0502a7;
   transform: translateY(-2px);
   box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }
@@ -387,7 +404,7 @@ body {
   background-color: rgba(115, 111, 111, 0.08);
 }
 
-/* === FOOTER === */
+/* FOOTER*/
 #footer {
   background: url('../../imagenes/bmw.png');
   background-size: cover;
@@ -424,8 +441,8 @@ body {
 
 #footer button[type="submit"]{
   display: inline-block;
-  background-color: #00ff7f;
-  color: #070707;
+  background-color: #1404f7;
+  color: #fefefe;
   padding: 3px 6px;
   border-radius: 6px;
   font-weight: 700;
@@ -433,12 +450,12 @@ body {
 }
 
 #footer button[type="submit"]:hover {
-  background-color: #05ad05;
+  background-color: #0a0463;
   transform: translateY(-2px);
   box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }
 
-/* === ICONOS SOCIALES === */
+/*redes sociales*/
 .social-icons {
   display: flex;
   justify-content: center;
@@ -458,10 +475,35 @@ body {
   transform: translateY(-6px);
   box-shadow: 0 0 15px rgba(255,255,255,0.4);
 }
-
+/* barra de navegacion que se debe ocultar en el responsive */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 /* === RESPONSIVE REAL PARA TU MENÚ === */
 @media (max-width: 768px) {
+  .site-header {
+    position: relative; /* referencia para el menú */
+  }
 
+  .nav-menu {
+    position: absolute;
+    top: 100%;          /* aparece debajo del header */
+    left: 0;
+
+    width: 100%;
+    background-color: #1404f7;
+
+    display: none;
+    flex-direction: column;
+
+    z-index: 9999;      /* se superpone a todo */
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
   .header-content {
     display: flex;
     justify-content: space-between;
@@ -477,17 +519,23 @@ body {
     display: block;
     width: 100%;
     text-align: center;
-    margin: .5rem 0;
+    margin-top: 8px;
   }
 
   .dropdown-menu {
-    position: static;
-    background: #001f3f;
-    border: none;
-    box-shadow: none;
-    width: 100%;
-  }
+  position: absolute;
+  top: 0;
+  left: 100%;                 /* las listas por encima a un costado */
+  
+  background: #4e9eee;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 
+  min-width: 200px;
+  width: max-content;
+
+  display: none;
+}
   .hamburguer {
     display: flex;
     flex-direction: column;
